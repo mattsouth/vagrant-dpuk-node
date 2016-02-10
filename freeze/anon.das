@@ -1,0 +1,357 @@
+// DPUK anonymization script Version 01
+- (0008,0014)// Instance Creator UID
+- (0008,0050)// Accession Number
+- (0008,1111)// Referenced Performed Procedure Step SQ
+- (0008,1120)// Referenced Patient SQ
+- (0008,1140)// Referenced Image SQ
+- (0008,0090)// Referring Physician's Name
+- (0008,0096)// Referring Physician Identification SQ
+- (0008,1032)// Procedure Code SQ
+- (0008,1048)// Physician(s) of Record
+- (0008,1049)// Physician(s) of Record Identification SQ
+- (0008,1050)// Performing Physicians' Name
+- (0008,1052)// Performing Physician Identification SQ
+- (0008,1060)// Name of Physician(s) Reading Study
+- (0008,1062)// Physician(s) Reading Study Identification SQ
+- (0008,1110)// Referenced Study SQ
+- (0008,1111)// Referenced Performed Procedure Step SQ
+- (0008,1250)// Related Series SQ
+- (0008,9092)// Referenced Image Evidence SQ
+//- (0010,0010)// Patient's Name
+//- (0010,0020)// Patient ID
+- (0010,0021)// Issuer of Patient ID
+- (0010,0030)// Patient's Birth Date
+- (0010,0032)// Patient's Birth Time
+- (0010,0050)// Patient's Insurance Plan Code SQ
+- (0010,0101)// Patient's Primary Language Code SQ
+- (0010,1000)// Other Patient IDs
+- (0010,1001)// Other Patient Names
+- (0010,1002)// Other Patient IDs SQ
+- (0010,1005)// Patient's Birth Name
+- (0010,1010)// Patient's Age
+- (0010,1040)// Patient's Address
+- (0010,1060)// Patient's Mother's Birth Name
+- (0010,1080)// Military Rank
+- (0010,1081)// Branch of Service
+- (0010,1090)// Medical Record Locator
+- (0010,2000)// Medical Alerts
+- (0010,2110)// Allergies
+- (0010,2150)// Country of Residence
+- (0010,2152)// Region of Residence
+- (0010,2154)// Patient's Telephone Numbers
+- (0010,2160)// Ethnic Group
+- (0010,2180)// Occupation
+- (0010,21A0)// Smoking Status
+- (0010,21B0)// Additional Patient History
+- (0010,21C0)// Pregnancy Status
+- (0010,21D0)// Last Menstrual Date
+- (0010,21F0)// Patient's Religious Preference
+- (0010,2203)// Patient's Sex Neutered
+- (0010,2297)// Responsible Person
+- (0010,2298)// Responsible Person Role
+- (0010,2299)// Responsible Organization
+(0012,0063) := "DPUK anonymization script Version 01, 2016-01-08"
+- (0020,9221)// Dimension Organization SQ
+- (0020,9222)// Dimension Index SQ
+- (0038,0010)// Admission ID
+- (0038,0011)// Issuer of Admission ID
+- (0038,0060)// Service Episode ID
+- (0038,0061)// Issuer of Service Episode ID
+- (0038,0062)// Service Episode Description
+- (0038,0500)// Patient State
+- (0038,0100)// Pertinent Documents SQ
+- (0040,0260)// Performed Protocol Code SQ
+- (0088,0130)// Storage Media File-Set ID
+- (0088,0140)// Storage Media File-Set UID
+- (5200,9229)// Shared Functional Groups SQ
+
+
+
+//general series
+- (0040,0275)//Request Attributes Sequence
+- (0040,0007)//Scheduled Procedure Step Description
+- (0040,0009)//Scheduled Procedure Step ID
+- (0040,1001)//Requested Procedure ID
+- (0040,0253)//Performed Procedure Step ID
+- (0040,0244)//Performed Procedure Step Start Date
+- (0040,0245)//Performed Procedure Step Start Time
+- (0040,0254)//Performed Procedure Step Description
+//end general series
+
+- (0002,0013) // ImplementationVersionName 
+- (0008,0070) // Manufacturer
+- (0008,0080) // InstitutionName 
+- (0008,0081) // InstitutionAddress
+- (0009,0010)// Unknown
+- (0019,0010) // Unknown
+- (0021,0010) // Unknown
+- (0029,0010) // Unknown
+- (0029,0011) // Unknown
+- (0032,1032) // RequestingPhysician
+- (0032,1033)// Requesting Service
+- (0032,1060)// Requesting Procedure
+- (0018,1030)// Protocol Name 
+- (0018,1000)// Device Serial Number 
+- (0008,2111)// Derivation Description
+- (0018,1020)// Software Versions 
+- (0008,1070)// PN\t1\tOperator Name
+- (0018,1020)// LO\t1\tSoftware Versions
+- (0009,1001)// LO\t1\tEquipment UID\t
+- (0009,1004)// SH\t1\tUNKNOWN\tDiscovery ST
+- (0023,0010)// LO\t1\tUNKNOWN\tGEMS_STDY_01
+- (0027,0010)// LO\t1\tUNKNOWN\tGEMS_IMAG_01
+- (0017,0010)// LO\t1\tUNKNOWN\tGEMS_PETD_01
+- (0009,100D)// DT\t1\tUNKNOWN\t20120425160606.00
+- (0009,100E)// DT\t1\tUNKNOWN\t20120425160518.00
+- (0009,1005)// DT\t1\tUNKNOWN\t20120425160507.00
+- (0009,1068)// DT\t1\tUNKNOWN\t20120425160547.00
+- (0009,1001)// LO\t1\tEquipment UID\t
+- (0018,1030)// LO\t1\tProtocol Name\t
+- (0043,0010)// LO\t1\tUNKNOWN\tGEMS_PARM_01
+- (0045,0010)// LO\t1\tUNKNOWN\tGEMS_HELIOS_01
+- (0040,0244)// DA\t1\tPerformed Procedure Step Start Date\t20120425
+
+
+//misc dates..
+- (0008,0012) 
+- (0009,103A)
+- (0009,103B)
+- (0009,103D)
+- (0009,106C)
+- (0019,1004)
+- (0018,1078)
+- (0018,1079)
+- (0018,1200) // Date of Last Calibration
+- (0008,002A) // acquisition date time
+
+//(0008,1030) := "Generic Study Description" // StudyDescription
+//(0020,0010) :="Generic Study ID"// StudyID  
+
+- (0008,0023) // New Blinded Content date
+- (0008,0022) // New Blinded Acquisition Date
+- (0008,0021) // New Blinded Series Date
+- (0008,0020) // New Blinded Study Date
+- (0008,1090) // Manufacturers Model Name 
+- (0010,0010) //PatientsName in SourceImageSequence
+- (0008,2112) //sourceimagesequence
+- (0010,0040) // Patient sex
+- (00E1,10C2) //study instance uid
+
+
+//adding clinical trial fields
+- (0012,0010)//Clinical Trial Sponsor Name
+- (0012,0020)//Clinica Trial Protocol ID
+- (0012,0021)//Clinical Trial Protocol Name
+- (0012,0030)//Clinical Trial Site ID
+- (0012,0031)//Clinical Trial Site Name
+- (0012,0040)//Clinical Trial Subject ID
+- (0012,0050)//Clinical Trial Time Point ID
+- (0012,0051)//Clinical Trial Time Point Desc
+//clinical trial fields
+
+//additions clinical fields
+- (0040,0253)//PerformedProcedureStepID"type="NO_CONTENT" 
+- (0040,0254)//PerformedProcedureStepDescription"type="NO_CONTENT" 
+- (0040,0275)//RequestAttributesSequence"type="NO_CONTENT" 
+- (0040,2400)//ImagingServiceRequestComments"type="NO_CONTENT" 
+- (0040,4034)//ScheduledHumanPerformersSequence"type="NO_CONTENT" 
+- (0040,4035)//ActualHumanPerformersSequence"type="NO_CONTENT" 
+- (0040,A075)//VerifyingObserverName"type="NO_CONTENT" 
+- (0040,A027)//VerifyingOrganization"type="NO_CONTENT" 
+- (0040,A073)//VerifyingObserverSequence"type="NO_CONTENT" 
+- (0040,A078)//AuthorObserverSequence"type="NO_CONTENT" 
+- (0040,A07A)//ParticipantSequence"type="NO_CONTENT" 
+- (0040,A088)//VerifyingObserverIdentificationCodeSequence"type="NO_CONTENT" 
+- (0088,0912)//TopicKeyWords"type="NO_CONTENT" 
+- (2030,0020)//TextString"type="NO_CONTENT" 
+- (3006,00A6)//ROIInterpreter"type="NO_CONTENT" 
+- (300E,0008)//ReviewerName"type="NO_CONTENT" 
+- (4000,0010)//Arbitrary"type="NO_CONTENT" 
+- (4000,4000)//TextComments"type="NO_CONTENT" 
+- (4008,0042)//ResultsIDIssuer"type="NO_CONTENT" 
+- (4008,0102)//InterpretationRecorder"type="NO_CONTENT" 
+- (4008,0103)//ReferenceToRecordedSound"type="NO_CONTENT" 
+- (4008,010A)//InterpretationTranscriber"type="NO_CONTENT" 
+- (4008,010B)//InterpretationText"type="NO_CONTENT" 
+- (4008,010C)//InterpretationAuthor"type="NO_CONTENT" 
+- (4008,0114)//PhysicianApprovingInterpretation"type="NO_CONTENT" 
+- (4008,0115)//InterpretationDiagnosisDescription"type="NO_CONTENT" 
+- (4008,0117)//InterpretationDiagnosisCodeSequence"type="NO_CONTENT" 
+- (4008,0118)//ResultsDistributionListSequence"type="NO_CONTENT" 
+- (4008,0119)//DistributionName"type="NO_CONTENT" 
+- (4008,011A)//DistributionAddress"type="NO_CONTENT" 
+- (0010,2154)//PatientTelephoneNumber"type="NO_CONTENT" 
+- (0010,2160)//EthnicGroup"type="NO_CONTENT" 
+- (0010,2180)//Occupation"type="NO_CONTENT" 
+- (0010,4000)//PatientComments"type="NO_CONTENT" 
+- (0018,0037)//TherapyType"type="NO_CONTENT" 
+- (0018,003A)//InterventionDescription"type="NO_CONTENT" 
+- (0018,1030)//ProtocolName"type="NO_CONTENT" 
+- (0018,4000)//AcquisitionComments"type="NO_CONTENT" 
+- (0018,A003)//ContributionDescription"type="NO_CONTENT" 
+- (0038,001E)//ScheduledPatientInstitutionResidence"type="NO_CONTENT" 
+- (0038,0040)//DischargeDiagnosisDescription"type="NO_CONTENT" 
+- (0038,0044)//DischargeDiagnosisCodeSequence"type="NO_CONTENT" 
+- (0038,4000)//VisitComments"type="NO_CONTENT" 
+- (0040,0001)//ScheduledStationAETitle"type="NO_CONTENT" 
+- (0040,0006)//ScheduledPerformingPhysicianName"type="NO_CONTENT" 
+- (0040,000B)//ScheduledPerformingPhysicianIdentificationSequence"type="NO_CONTENT" 
+- (0040,0007)//ScheduledProcedureStepDescription"type="NO_CONTENT" 
+- (0040,0008)//ScheduledProtocolCodeSequence"type="NO_CONTENT" 
+- (0040,0010)//ScheduledStationName"type="NO_CONTENT" 
+- (0040,0241)//PerformedStationAETitle"type="NO_CONTENT" 
+- (0040,0242)//PerformedStationName"type="NO_CONTENT" 
+- (0040,1004)//PatientTransportArrangements"type="NO_CONTENT" 
+- (0040,1005)//RequestedProcedureLocation"type="NO_CONTENT" 
+- (0040,1002)//ReasonForRequestedProcedure"type="NO_CONTENT" 
+- (0040,100A)//ReasonForRequestedProcedureCodeSequence"type="NO_CONTENT" 
+- (0040,1010)//NamesOfIntendedRecipientsOfResults"type="NO_CONTENT" 
+- (0040,1011)//IntendedRecipientsOfResultsIdentificationSequence"type="NO_CONTENT" 
+- (0040,1101)//PersonIdentificationCodeSequence"type="NO_CONTENT" 
+- (0040,1102)//PersonAddress"type="NO_CONTENT" 
+- (0040,1103)//PersonTelephoneNumbers"type="NO_CONTENT" 
+- (0040,1400)//RequestedProcedureComments"type="NO_CONTENT" 
+- (0040,2001)//ReasonForImagingServiceRequest"type="NO_CONTENT" 
+- (0040,2008)//OrderEnteredBy"type="NO_CONTENT" 
+- (0040,2009)//OrderEntererLocation"type="NO_CONTENT" 
+- (0040,2010)//OrderCallbackPhoneNumber"type="NO_CONTENT" 
+- (0040,2016)//PlacerOrderNumberOfImagingServiceRequest"type="NO_CONTENT" 
+- (0040,2006)//PlacerOrderNumberOfImagingServiceRequestRetired"type="NO_CONTENT" 
+- (0040,2017)//FillerOrderNumberOfImagingServiceRequest"type="NO_CONTENT" 
+- (0040,2007)//FillerOrderNumberOfImagingServiceRequestRetired"type="NO_CONTENT" 
+- (0010,0030)//PatientBirthDate"type="NO_CONTENT" 
+- (0008,0080)//InstitutionName"type="NO_CONTENT" 
+- (0008,0081)//InstitutionAddress"type="NO_CONTENT" 
+- (0008,0092)//ReferringPhysicianAddress"type="NO_CONTENT" 
+- (0008,0094)//ReferringPhysicianTelephoneNumber"type="NO_CONTENT" 
+- (0008,0096)//ReferringPhysicianIdentificationSequence"type="NO_CONTENT" 
+- (0008,1010)//StationName"type="NO_CONTENT" 
+- (0008,1040)//InstitutionalDepartmentName"type="NO_CONTENT" 
+- (0008,1048)//PhysicianOfRecord"type="NO_CONTENT" 
+- (0008,1050)//PerformingPhysicianName"type="NO_CONTENT" 
+- (0008,1052)//PerformingPhysicianIdentificationSequence"type="NO_CONTENT" 
+- (0008,1070)//OperatorName"type="NO_CONTENT" 
+- (0008,1072)//OperatorIdentificationSequence"type="NO_CONTENT" 
+- (0008,1080)//AdmittingDiagnosesDescription"type="NO_CONTENT" 
+- (0008,1084)//AdmittingDiagnosesCodeSequence"type="NO_CONTENT" 
+- (0008,1120)//ReferencedPatientSequence"type="NO_CONTENT" 
+- (0038,0004)//ReferencedPatientAliasSequence"type="NO_CONTENT" 
+- (0008,2111)//DerivationDescription"type="NO_CONTENT" 
+- (0008,4000)//IdentifyingComments"type="NO_CONTENT" 
+- (0010,0032)//PatientBirthTime"type="NO_CONTENT" 
+- (0010,1005)//PatientBirthName"type="NO_CONTENT" 
+- (0038,0400)//PatientInstitutionResidence"type="NO_CONTENT" 
+- (0010,0102)//PatientPrimaryLanguageModifierCodeSequence"type="NO_CONTENT" 
+- (0010,1000)//OtherPatientID"type="NO_CONTENT" 
+- (0010,1040)//PatientAddress"type="NO_CONTENT" 
+- (0010,1050)//InsurancePlanIdentification"type="NO_CONTENT" 
+- (0010,1060)//PatientMotherBirthName"type="NO_CONTENT" 
+- (0010,1080)//MilitaryRank"type="NO_CONTENT" 
+- (0010,1081)//BranchOfService"type="NO_CONTENT" 
+- (0010,1090)//MedicalRecordLocator"type="NO_CONTENT" 
+- (0010,2000)//MedicalAlerts"type="NO_CONTENT" 
+- (0010,2110)//ContrastAllergies"type="NO_CONTENT" 
+- (0040,4025)//ScheduledStationNameCodeSequence"type="NO_CONTENT" 
+- (0040,4028)//PerformedStationNameCodeSequence"type="NO_CONTENT" 
+- (0040,4030)//PerformedStationGeographicLocationCodeSequence"type="NO_CONTENT" 
+- (0040,A123)//PersonName"type="NO_CONTENT" 
+- (0040,A730)//ContentSequence"type="NO_CONTENT" 
+- (0040,0084)//ContentCreatorsName"type="NO_CONTENT" 
+- (0040,0086)//ContentCreatorsIdentificationCodeSequence"type="NO_CONTENT" 
+- (0072,006A)//SelectorPNValue"type="NO_CONTENT" 
+- (0088,0904)//TopicTitle"type="NO_CONTENT" 
+- (0088,0906)//TopicSubject"type="NO_CONTENT" 
+- (0088,0910)//TopicAuthor"type="NO_CONTENT" 
+- (4008,0202)//InterpretationIDIssuer"type="NO_CONTENT" 
+- (4008,0300)//Impressions"type="NO_CONTENT" 
+- (4008,4000)//ResultsComments"type="NO_CONTENT" 
+- (6000,4000)//OverlayComments"type="NO_CONTENT" 
+- (0008,0010)//RecognitionCode"type="NO_CONTENT" 
+- (0008,0050)//AccessionNumber"type="NO_CONTENT" 
+- (0008,0090)//ReferringPhysicianName"type="NO_CONTENT" 
+- (0008,0041)//OldDataSetSubtype"type="NO_CONTENT" 
+- (0008,0040)//OldDataSetType"type="NO_CONTENT" 
+- (0008,0042)//NuclearMedicineSeriesTypeRetired"type="NO_CONTENT" 
+- (0008,1049)//PhysicianOfRecordIdentificationSequence"type="NO_CONTENT" 
+- (0008,1060)//PhysicianReadingStudy"type="NO_CONTENT" 
+- (0008,1062)//PhysicianReadingStudyIdentificationSequence"type="NO_CONTENT" 
+- (300C,006A)//ReferencedPatientSetupNumber"type="NO_CONTENT" 
+- (0010,0050)//PatientInsurancePlanCodeSequence"type="NO_CONTENT" 
+- (0010,0101)//PatientPrimaryLanguageCodeSequence"type="NO_CONTENT" 
+- (0010,2150)//CountryOfResidence"type="NO_CONTENT" 
+- (0010,2152)//RegionOfResidence"type="NO_CONTENT" 
+- (0010,21A0)//SmokingStatus"type="NO_CONTENT" 
+- (0010,21B0)//AdditionalPatientHistory"type="NO_CONTENT" 
+- (0010,21C0)//PregnancyStatus"type="NO_CONTENT" 
+- (0010,21D0)//LastMenstrualDate"type="NO_CONTENT" 
+- (0010,21F0)//PatientReligiousPreference"type="NO_CONTENT" 
+- (0010,2203)//PatientSexNeutered"type="NO_CONTENT" 
+- (0010,2297)//ResponsiblePerson"type="NO_CONTENT" 
+- (0010,2299)//ResponsibleOrganization"type="NO_CONTENT" 
+- (0018,0039)//TherapyDescription"type="NO_CONTENT" 
+- (0018,1400)//AcquisitionDeviceProcessingDescription"type="NO_CONTENT" 
+- (0018,9424)//AcquisitionProtocolDescription"type="NO_CONTENT" 
+- (0020,1020)//Reference"type="NO_CONTENT" 
+- (0020,3401)//ModifyingDeviceID"type="NO_CONTENT" 
+- (0020,3404)//ModifyingDeviceManufacturer"type="NO_CONTENT" 
+- (0020,3406)//ModifiedImageDescription"type="NO_CONTENT" 
+- (0020,4000)//ImageComments"type="NO_CONTENT" 
+- (0028,0040)//ImageFormat"type="NO_CONTENT" 
+- (0028,0050)//ManipulatedImage"type="NO_CONTENT" 
+- (0028,4000)//ImagePresentationComments"type="NO_CONTENT" 
+- (0032,0012)//StudyIDIssuer"type="NO_CONTENT" 
+- (0032,1020)//ScheduledStudyLocation"type="NO_CONTENT" 
+- (0032,1021)//ScheduledStudyLocationAETitle"type="NO_CONTENT" 
+- (0032,1030)//ReasonForStudy"type="NO_CONTENT" 
+- (0032,1031)//RequestingPhysicianIdentificationSequence"type="NO_CONTENT" 
+- (0032,1032)//RequestingPhysician"type="NO_CONTENT" 
+- (0032,1033)//RequestingService"type="NO_CONTENT" 
+- (0032,1055)//StudyComponentStatusID"type="NO_CONTENT" 
+- (0032,1060)//RequestedProcedureDescription"type="NO_CONTENT" 
+- (0032,1064)//RequestedProcedureCodeSequence"type="NO_CONTENT" 
+- (0032,1070)//RequestedContrastAgent"type="NO_CONTENT" 
+- (0032,4000)//StudyComments"type="NO_CONTENT" 
+- (0038,0011)//IssuerOfAdmissionID"type="NO_CONTENT" 
+- (0010,0021)//IssuerOfPatientID"type="NO_CONTENT" 
+- (0038,0050)//SpecialNeeds"type="NO_CONTENT" 
+- (0038,0300)//CurrentPatientLocation"type="NO_CONTENT" 
+- (0038,0500)//PatientState"type="NO_CONTENT" 
+- (0038,0502)//PatientClinicalTrialParticipationSequence"type="NO_CONTENT" 
+- (0040,4027)//ScheduledStationGeographicLocationCodeSequence"type="NO_CONTENT" 
+- (0040,0011)//ScheduledProcedureStepLocation"type="NO_CONTENT" 
+- (0040,0012)//PreMedication"type="NO_CONTENT" 
+- (0040,0243)//PerformedLocation"type="NO_CONTENT" 
+//- (0010,1020)//PatientSize"type="NO_CONTENT" 
+//- (0010,1030)//PatientWeight"type="NO_CONTENT" 
+- (0010,1010)//PatientAge"type="NO_CONTENT" 
+- (0010,0040)//PatientSex"type="NO_CONTENT" 
+- (0028,1214)//LargePaletteColorLookupTableUID"type="NO_CONTENT" 
+- (0040,DB0C)//TemplateExtensionOrganizationUID"type="NO_CONTENT" 
+- (0088,0140)//StorageMediaFileSetUID"type="NO_CONTENT" 
+- (0008,1195)//TransactionUID"type="NO_CONTENT" 
+- (0040,4023)//ReferencedGeneralPurposeScheduledProcedureStepTransactionUID"type="NO_CONTENT" 
+- (0040,DB0D)//TemplateExtensionCreatorUID"type="NO_CONTENT" 
+- (0012,0051)//ClinicalTrialTimePointDescription"type="NO_CONTENT" 
+- (0012,0050)//ClinicalTrialTimePointID"type="NO_CONTENT" 
+- (0012,0010)//ClinicalTrialSponsorName"type="NO_CONTENT" 
+- (0012,0020)//ClinicalTrialProtocolID"type="NO_CONTENT" 
+- (0012,0021)//ClinicalTrialProtocolName"type="NO_CONTENT" 
+- (0012,0030)//ClinicalTrialSiteID"type="NO_CONTENT" 
+- (0012,0031)//ClinicalTrialSiteName"type="NO_CONTENT" 
+- (0012,0040)//ClinicalTrialSubjectID"type="NO_CONTENT" 
+- (0012,0042)//ClinicalTrialSubjectReadingID"type="NO_CONTENT" 
+- (0012,0060)//ClinicalTrialCoordinatingCenterName"type="NO_CONTENT" 
+- (0012,0071)//ClinicalTrialSeriesID"type="NO_CONTENT" 
+- (0012,0072)//ClinicalTrialSeriesDescription"type="NO_CONTENT" 
+
+
+(0002,0003) := new UID// Media Storage SOP Instance UID
+(0008,0018) := new UID// SOP Instance UID
+(0020,000D) := new UID// Study Instance UID
+(0020,000E) := new UID// Series Instance UID
+(0020,0052) := new UID// Frame of Reference UID
+(0020,0200) := new UID// Synchronization FofR UID
+(0020,9161) := new UID// Concatenation UID
+
+
+
