@@ -4,6 +4,7 @@ virtualbox VM.  A generic DPUK XNAT install consists of multiple constituent par
 * java7
 * tomcat7
 * postgres 9.3
+* Postfix
 * XNAT 1.6.5 (dpuk node branch)
 * DPUK modules
 
@@ -17,15 +18,18 @@ To create an XNAT 1.6.5 virtual machine, you'll need the following software:
 
 ### Installation
 
-Once you have the prerequisites above, it should be straightforward to create your new test DPUK Node instance:
+Once you have the prerequisites above, it should be straightforward to setup your own test DPUK Node instance:
 
 At the command line:
 
 ```bash
-git clone https://github.com/mattsouth/dpuk_vagrant
-cd dpuk_vagrant
+git clone https://github.com/mattsouth/vagrant-dpuk-node
+cd vagrant-dpuk-node
 ```
-Review the settings in vars.sh, particularly TODO:
+
+This project will create a virtual machine on IP address 192.168.50.50, which expects to be mapped to http://xnat.dpukdev.org (i.e. in /etc/hosts).  You can change the mapped url in vars.sh.  By default
+postfix is setup to send mail but this may not work in a university.  You can configure an alternative
+smtp server in the services.properties file.  Have a quick review of the files and then run:
 
 ```bash
 vagrant up
