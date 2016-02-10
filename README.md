@@ -1,5 +1,5 @@
-This vagrant project will install a generic DPUK XNAT instance to a local
-virtualbox VM.  A generic DPUK XNAT install consists of multiple constituent parts:
+This vagrant project will help setup a DPUK XNAT Node instance to a local
+virtualbox VM.  A DPUK XNAT Node install includes multiple constituent parts:
 
 * java7
 * tomcat7
@@ -27,20 +27,23 @@ git clone https://github.com/mattsouth/vagrant-dpuk-node
 cd vagrant-dpuk-node
 ```
 
-This project will create a virtual machine on IP address 192.168.50.50, which expects to be mapped to http://xnat.dpukdev.org (i.e. in /etc/hosts).  You can change the mapped url in vars.sh.  By default
-postfix is setup to send mail but this may not work in a university.  You can configure an alternative
-smtp server in the services.properties file.  Have a quick review of the files and then run:
+This project will create a virtual machine on IP address 192.168.50.50, which expects to be mapped to http://xnat.dpukdev.org. You must set this mapping up yourself (i.e. in /etc/hosts) or change it to one
+that suits you better in vars.sh.  By default postfix is setup to send mail but this may not work in a
+university network.  You can configure an alternative smtp server in the services.properties file.
+Its a good idea to should change the default admin email address to your own in the services.properties file.
+Have a quick review of the files and then run:
 
 ```bash
 vagrant up
 ```
 
 After running 'vagrant up' you should be able to see a dpuk branded version of
-xnat on http://192.168.50.50.  The default admin credentials are admin/admin
+xnat on http://xnat.dpukdev.org (or whatever you've configured).  The default admin credentials are admin/admin
 The first time you login you'll need to configure three things:
  * set the site description - we suggest DPUK-[SITE], e.g. DPUK-OXFORD
- * configure data freeze
+ * configure the data freeze functionality (see freeze folder for default text)
  * register the dpuk datatypes
+See https://info.dpuk.org/testing/post-install-steps for further instructions
 
 ### Notes
 
