@@ -30,7 +30,7 @@ cd vagrant-dpuk-node
 This project will create a virtual machine on IP address 192.168.50.50, which expects to be mapped to http://xnat.dpukdev.org. You must set this mapping up yourself (i.e. in /etc/hosts) or change it to one
 that suits you better in vars.sh.  By default postfix is setup to send mail but this may not work in a
 university network.  You can configure an alternative smtp server in the services.properties file.
-Its a good idea to should change the default admin email address to your own in the services.properties file.
+You will need to change the default admin email address to your own in the services.properties file.
 Have a quick review of the files and then run:
 
 ```bash
