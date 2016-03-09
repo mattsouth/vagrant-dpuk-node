@@ -11,7 +11,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   	v.memory = 2048
   	v.cpus = 1
   end
-
+  config.vm.provider :libvirt do |v|
+    v.memory = 2048
+    v.cpus = 1
+  end
   config.vm.provision "shell", path: "provision.sh"
 
 end
