@@ -36,6 +36,7 @@ Have a quick review of the files and then run:
 ```bash
 vagrant up
 ```
+It should take approx 5 mins to setup the box (dependent on your network connection and the responsiveness of the various repositories involved in the build) during which time you'll see lots of System output from the install process.
 
 After running 'vagrant up' you should be able to see a dpuk branded version of
 xnat on http://xnat.dpukdev.org (or whatever you've configured).  The default admin credentials are admin/admin
@@ -48,3 +49,7 @@ See https://info.dpuk.org/testing/post-install-steps for further instructions
 ### Notes
 
 This project is based on the [reference XNAT 1.6.5 vagrant project](https://bitbucket.org/nrg/xnat_vagrant_1_6dev).
+
+### KVM
+
+Several partner institutions have used KVM and not Virtualbox.
