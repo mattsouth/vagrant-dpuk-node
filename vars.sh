@@ -1,7 +1,11 @@
 #!/bin/bash
 HOST=xnat
+HOST_SQL=sql
 DOMAIN=dpukdev.org
 XNAT=xnat_builder_1_6dev_dpuk_node
 PIPELINE_INST=pipeline-installer-1.6.5
 JAVA_PATH=/usr/lib/jvm/java-7-openjdk-amd64
 ADMIN_EMAIL=administrator@dpukdev.org
+POSTGRESQL_XNAT_USER=xnat
+POSTGRESQL_XNAT_PASSWD=xnat
+POSTGRESQL_XNAT_DB=xnat

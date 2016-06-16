@@ -1,7 +1,8 @@
 #!/bin/bash
 
 source /vagrant/vars.sh
-echo -e "192.168.50.50\t${HOST} ${HOST}.${DOMAIN}" | sudo tee --append /etc/hosts
+echo -e "192.168.100.50\t${HOST} ${HOST}.${DOMAIN}" | sudo tee --append /etc/hosts
+echo -e "192.168.100.51\t${HOST_SQL} ${HOST_SQL}.${DOMAIN}" | sudo tee --append /etc/hosts
 
 # # Install dependencies: configure NeuroDebian, update and upgrade the VM, then install PostgreSQL, OpenJDK 7, Tomcat 7, and nginx.
 wget -O- http://neuro.debian.net/lists/trusty.us-tn.libre | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
@@ -15,7 +16,7 @@ sudo apt-get -y install htop unzip
 sudo apt-get -y install openjdk-7-jdk
 sudo apt-get -y install tomcat7
 sudo apt-get -y install nginx
-sudo apt-get -y install postgresql
+sudo apt-get -y install postgresql-client
 
 # install postfix
 # see https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-postfix-as-a-send-only-smtp-server-on-ubuntu-14-04
@@ -49,7 +50,7 @@ else
 fi
 tar -zxvf ${XNAT}.tar.gz
 [[ ! -d /data/xnat/src/${XNAT} && -d /data/xnat/src/xnat ]] && { mv /data/xnat/src/xnat /data/xnat/src/${XNAT}; }
-cat /vagrant/build.properties.tmpl | sed "s/@HOST@/${HOST}/g" | sed "s/@DOMAIN@/${DOMAIN}/g" | tee /data/xnat/src/${XNAT}/build.properties
+cat /vagrant/build.properties.tmpl | sed "s/@HOST@/${HOST}/g" | sed "s/@DOMAIN@/${DOMAIN}/g" | sed "s/@POSTGRESQL_XNAT_USER@/${POSTGRESQL_XNAT_USER}/g"| sed "s/@POSTGRESQL_XNAT_PASSWD@/${POSTGRESQL_XNAT_PASSWD}/g"| sed "s/@POSTGRESQL_XNAT_DB@/${POSTGRESQL_XNAT_DB}/g"| sed "s/@HOST_SQL@/${HOST_SQL}/g"| tee /data/xnat/src/${XNAT}/build.properties
 
 if [ -f /vagrant/${PIPELINE_INST}.tar.gz ]; then
     sudo cp /vagrant/${PIPELINE_INST}.tar.gz .
@@ -89,18 +90,13 @@ cat /vagrant/xnatdev.tmpl | sed "s/@HOST@/${HOST}/g" | sed "s/@DOMAIN@/${DOMAIN}
 sudo rm /etc/nginx/sites-enabled/default
 sudo ln -s /etc/nginx/sites-available/${HOST} /etc/nginx/sites-enabled/${HOST}
 
-# Create XNAT's database user.
-sudo -u postgres createuser -U postgres -S -D -R xnat
-sudo -u postgres psql -U postgres -c "ALTER USER xnat WITH PASSWORD 'xnat'"
-sudo -u postgres createdb -U postgres -O xnat xnat
-
 # xnat installation
 cd /data/xnat/src/${XNAT}
 sudo su xnat -c "echo 'export JAVA_HOME=${JAVA_PATH}' >> /home/xnat/.bashrc"
 sudo su xnat -c "echo 'export PATH=\${PATH}:/data/xnat/src/${XNAT}/bin' >> /home/xnat/.bashrc"
 sudo su xnat -c "source ~/.bashrc && bin/setup.sh -Ddeploy=true"
 cd deployments/xnat
-sudo -u xnat psql -d xnat -f sql/xnat.sql -U xnat
+sudo -u xnat PGPASSWORD=${POSTGRESQL_XNAT_PASSWD} psql -h ${HOST_SQL} -d ${POSTGRESQL_XNAT_DB} -f sql/xnat.sql -U ${POSTGRESQL_XNAT_USER}
 sudo su xnat -c "source ~/.bashrc && StoreXML -l security/security.xml -allowDataDeletion true"
 sudo su xnat -c "source ~/.bashrc && StoreXML -dir ./work/field_groups -u admin -p admin -allowDataDeletion true"
 

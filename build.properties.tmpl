@@ -11,11 +11,11 @@ maven.appserver.home = /var/lib/tomcat7
 xnat.site.title=XNAT
 
 xdat.project.name=xnat
-xdat.project.db.name=xnat
+xdat.project.db.name=@POSTGRESQL_XNAT_DB@
 xdat.project.db.driver=org.postgresql.Driver
-xdat.project.db.connection.string=jdbc:postgresql://localhost/xnat
-xdat.project.db.user=xnat
-xdat.project.db.password=xnat
+xdat.project.db.connection.string=jdbc:postgresql://@HOST_SQL@/@POSTGRESQL_XNAT_DB@
+xdat.project.db.user=@POSTGRESQL_XNAT_USER@
+xdat.project.db.password=@POSTGRESQL_XNAT_PASSWD@
 
 # IMAGE FILE LOCATION (FOR USE WITH THE xnat TEMPLATE)
 # Location where image data will be stored, e.g. /tmp/archive.
