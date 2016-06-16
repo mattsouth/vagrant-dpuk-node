@@ -1,3 +1,5 @@
+## NOTE: SQLONLY branch - SQL install when TOMCAT and POSTGRESQL are separated
+
 This vagrant project will help setup a DPUK XNAT Node instance to a local
 virtualbox VM.  A DPUK XNAT Node install includes multiple constituent parts:
 
