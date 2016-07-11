@@ -50,6 +50,7 @@ fi
 tar -zxvf ${XNAT}.tar.gz
 [[ ! -d /data/xnat/src/${XNAT} && -d /data/xnat/src/xnat ]] && { mv /data/xnat/src/xnat /data/xnat/src/${XNAT}; }
 cat /vagrant/build.properties.tmpl | sed "s/@HOST@/${HOST}/g" | sed "s/@DOMAIN@/${DOMAIN}/g" | tee /data/xnat/src/${XNAT}/build.properties
+cp /vagrant/project.properties /data/xnat/src/${XNAT}/project.properties
 
 if [ -f /vagrant/${PIPELINE_INST}.tar.gz ]; then
     sudo cp /vagrant/${PIPELINE_INST}.tar.gz .
