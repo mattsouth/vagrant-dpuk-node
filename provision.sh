@@ -4,8 +4,8 @@ source /vagrant/vars.sh
 echo -e "192.168.50.50\t${HOST} ${HOST}.${DOMAIN}" | sudo tee --append /etc/hosts
 
 # # Install dependencies: configure NeuroDebian, update and upgrade the VM, then install PostgreSQL, OpenJDK 7, Tomcat 7, and nginx.
-wget -O- http://neuro.debian.net/lists/trusty.us-tn.libre | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
-sudo apt-key adv --recv-keys --keyserver hkp://pgp.mit.edu:80 0xA5D32F012649A5A9
+#wget -O- http://neuro.debian.net/lists/trusty.us-tn.libre | sudo tee /etc/apt/sources.list.d/neurodebian.sources.list
+#sudo apt-key adv --recv-keys --keyserver hkp://pgp.mit.edu:80 0xA5D32F012649A5A9
 sudo apt-get update
 sudo apt-get -y upgrade
 sudo apt-get -y autoremove
@@ -50,6 +50,10 @@ fi
 tar -zxvf ${XNAT}.tar.gz
 [[ ! -d /data/xnat/src/${XNAT} && -d /data/xnat/src/xnat ]] && { mv /data/xnat/src/xnat /data/xnat/src/${XNAT}; }
 cat /vagrant/build.properties.tmpl | sed "s/@HOST@/${HOST}/g" | sed "s/@DOMAIN@/${DOMAIN}/g" | tee /data/xnat/src/${XNAT}/build.properties
+cp /vagrant/project.properties /data/xnat/src/${XNAT}/.
+sudo cp /vagrant/ukbfetch /opt/.
+sudo chmod +x /opt/ukbfetch
+sudo chown xnat:xnat /opt/ukbfetch
 
 if [ -f /vagrant/${PIPELINE_INST}.tar.gz ]; then
     sudo cp /vagrant/${PIPELINE_INST}.tar.gz .

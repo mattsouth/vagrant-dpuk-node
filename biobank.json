@@ -1,0 +1,86 @@
+{
+	"diag": {
+	},
+	"key": {
+		"xnat:subjectdata.label": "eid",
+		"xnat:subjectdata.demographics.gender": "31-0.0",
+		"xnat:subjectdata/demographics/yob": "34-0.0",
+		"xnat:mrSessionData.label": "eid",
+		"xnat:mrSessionData.date": "53-0.0",
+		"xnat:mrSessionData.visit_id": "eid"
+	},
+	"scans": [
+		[
+			"DCM",
+			"TASK",
+			"Functional brain images - task",
+			"20217-2.0"
+		],
+		[
+			"NIFTI",
+			"TASK",
+			"Functional brain images - task",
+			"20249"
+		],
+		[
+			"DCM",
+			"DIFFUSION",
+			"Multiband diffusion brain images",
+			"20218-2.0"
+		],
+		[
+			"NIFTI",
+			"DIFFUSION",
+			"Multiband diffusion brain images",
+			"20250"
+		],
+		[
+			"DCM",
+			"SWI",
+			"Susceptibility weighted brain images",
+			"20219-2.0"
+		],
+		[
+			"NIFTI",
+			"SWI",
+			"Susceptibility weighted brain images",
+			"20251"
+		],
+		[
+			"DCM",
+			"3D_T1",
+			"T1 structural brain images",
+			"20216-2.0"
+		],
+		[
+			"NIFTI",
+			"3D_T1",
+			"T1 structural brain images",
+			"20252"
+		],
+		[
+			"DCM",
+			"REST",
+			"Functional brain images - resting",
+			"20225-2.0"
+		],
+		[
+			"NIFTI",
+			"REST",
+			"Functional brain images - resting",
+			"20227"
+		],
+		[
+			"DCM",
+			"3D_T2",
+			"T2 FLAIR structural brain images",
+			"20220-2.0"
+		],
+		[
+			"NIFTI",
+			"3D_T2",
+			"T2 FLAIR structural brain images",
+			"20253"
+		]
+	]
+}
