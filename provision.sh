@@ -44,7 +44,7 @@ cd /data/xnat/src
 if [ -f /vagrant/${XNAT}.tar.gz ]; then
     sudo cp /vagrant/${XNAT}.tar.gz .
 else
-    sudo curl -O https://info.dpuk.org/wp-content/uploads/2016/02/xnat_builder_1_6dev_dpuk_node.tar.gz
+    sudo curl -O https://info.dpuk.org/wp-content/uploads/2016/12/xnat_builder_1_6dev_bb.tar.gz
     sudo cp ${XNAT}.tar.gz /vagrant/.
 fi
 tar -zxvf ${XNAT}.tar.gz
